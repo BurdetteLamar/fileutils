@@ -358,10 +358,7 @@ module FileUtils
   #
   # Raises an exception if for any reason a directory cannot be created.
   #
-  # FileUtils.mkpath and FileUtils.makedirs are aliases for FileUtils.mkdir_p.
-  #
   # Related: FileUtils.mkdir.
-  #
   def mkdir_p(list, mode: nil, noop: nil, verbose: nil)
     list = fu_list(list)
     fu_output_message "mkdir -p #{mode ? ('-m %03o ' % mode) : ''}#{list.join ' '}" if verbose
@@ -1500,10 +1497,7 @@ module FileUtils
   # Arguments +a+ and +b+
   # should be {interpretable as a path}[rdoc-ref:FileUtils@Path+Arguments].
   #
-  # FileUtils.identical? and FileUtils.cmp are aliases for FileUtils.compare_file.
-  #
   # Related: FileUtils.compare_stream.
-  #
   def compare_file(a, b)
     return false unless File.size(a) == File.size(b)
     File.open(a, 'rb') {|fa|
